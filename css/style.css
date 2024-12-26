@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+:root{
+    /* colors */
+    --body-color: #E4E9F7;
+    --sideber-color: #fff;
+    --primary-color: #695cff;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+    --search-color: #F6F4FF;
+}
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+/* =========resuable css========== */
+
+/* =========sideber========== */
+.sideber{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background-color: var(--sideber-color);
+    padding: 20px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sideberProfile{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+.profile{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sideberProfileDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.sideberProfileDetails span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.iconText{
+    font-weight: 600;
+}
+.sideberProfileClose{
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: var(--sideber-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sideberMenuSearch{
+    background-color: var(--search-color);
+    padding: 15px 0;
+    border-radius: 8px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.sideberMenuItem{
+    padding: 15px 0;
+    border-radius: 8px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: all .4s ease;
+}
+.sideberMenuItem:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+.sideberMenuItemIcon{
+    min-width: 60px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+.sideberMenuSearch input{
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding-right: 10px;
+}
+.sideberMenuSearch input:focus-visible{
+    outline: none;
+}
+.sideberMenuItem input::placeholder{
+    color: var(--text-color);
+}
+.mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--search-color);
+    padding: 15px 0;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+.moon-sun i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+.modeText{
+    font-weight: 600;
+    margin-left: 60px;
+}
+.toggleSwitch{
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: var(--toggle-color);
+    margin-right: 10px;
+    position: relative;
+}
+.switch{
+    width: 15px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--sideber-color);
+    position: absolute;
+    top: 3px;
+    left: 4px;
+}
+.sun{
+    display: none !important;
+}
