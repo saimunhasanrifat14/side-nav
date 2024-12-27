@@ -16,19 +16,39 @@ a{
     /* colors */
     --body-color: #E4E9F7;
     --sideber-color: #fff;
-    --primary-color: #695cff;
+    --primary-color: #bdbdbd;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
     --text-color: #707070;
-    --search-color: #F6F4FF;
+    --black-color: #303030;
+    --white-color: #fff;
 }
 body{
     height: 100vh;
     background-color: var(--body-color);
+    transition: all .2s ease;
+}
+
+body.dark{
+    --body-color: #18191A;
+    --sideber-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --black-color: #ccc;
+    --white-color: #fff;
 }
 
 /* =========resuable css========== */
-
+.sideber .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all .5s ease;
+    white-space: nowrap;
+    opacity: 1;
+}
 /* =========sideber========== */
 .sideber{
     position: fixed;
@@ -41,6 +61,19 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all .5s ease;
+}
+.sideber.close{
+    width: 88px;
+}
+.sideber.close .text{
+    display: none;
+}
+body.dark .sun{
+    display: inline-block !important;
+}
+body.dark .moon{
+    display: none;
 }
 .sideberProfile{
     display: flex;
@@ -53,15 +86,21 @@ body{
     height: 60px;
     border-radius: 50%;
     margin-right: 15px;
+    cursor: pointer;
 }
 .sideberProfileDetails{
     display: flex;
     flex-direction: column;
     align-items: start;
 }
+.sideberProfileDetails h3{
+    color: var(--black-color);
+    white-space: rowrap;
+}
 .sideberProfileDetails span{
     font-size: 14px;
     font-weight: 600;
+    color: var(--black-color);
 }
 .iconText{
     font-weight: 600;
@@ -71,7 +110,7 @@ body{
     height: 35px;
     background-color: var(--primary-color);
     border-radius: 50%;
-    color: var(--sideber-color);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,10 +118,14 @@ body{
     right: -30px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
+}
+.sideberProfileClose i{
+    color: var(--white-color);
 }
 
 .sideberMenuSearch{
-    background-color: var(--search-color);
+    background-color: var(--primary-color-light);
     padding: 15px 0;
     border-radius: 8px;
     color: var(--text-color);
@@ -101,6 +144,9 @@ body{
 }
 .sideberMenuItem:hover{
     background-color: var(--primary-color);
+    color: white;
+}
+.sideberMenuItem:hover .iconText{
     color: white;
 }
 .sideberMenuItemIcon{
@@ -127,12 +173,12 @@ body{
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: var(--search-color);
+    background-color: var(--primary-color-light);
     padding: 15px 0;
     border-radius: 8px;
     color: var(--text-color);
 }
-.moon-sun i{
+.moon-sun{
     position: absolute;
     top: 0;
     left: 0;
@@ -156,6 +202,7 @@ body{
     background-color: var(--toggle-color);
     margin-right: 10px;
     position: relative;
+    margin-left: 10px;
 }
 .switch{
     width: 15px;
@@ -165,7 +212,12 @@ body{
     position: absolute;
     top: 3px;
     left: 4px;
+    transition: all .2s ease;
 }
 .sun{
     display: none !important;
+}
+
+body.dark .switch{
+    left: 20px;
 }
